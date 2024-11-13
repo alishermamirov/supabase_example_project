@@ -26,7 +26,7 @@ class _NotesScreenState extends State<NotesScreen> {
                 saveNote();
                 Navigator.pop(context);
               },
-              child: Text("Add"),
+              child: const Text("Add"),
             ),
           ],
         );
@@ -50,15 +50,14 @@ class _NotesScreenState extends State<NotesScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text("Supabase example"),
+        title: const Text("Supabase example"),
         centerTitle: true,
       ),
       body: StreamBuilder(
         stream: noteStream,
         builder: (context, snapshot) {
-          print(snapshot.data);
           if (snapshot.connectionState == ConnectionState.waiting) {
-            return Center(
+            return const Center(
               child: CircularProgressIndicator(),
             );
           } else if (snapshot.hasData) {
@@ -74,16 +73,14 @@ class _NotesScreenState extends State<NotesScreen> {
               },
             );
           }
-          return Center(
-            child: Container(
-              child: Text("Malumot mavjud emas"),
-            ),
+          return const Center(
+            child: Text("Malumot mavjud emas"),
           );
         },
       ),
       floatingActionButton: FloatingActionButton(
         onPressed: () => showAddNote(context),
-        child: Icon(Icons.add),
+        child: const Icon(Icons.add),
       ),
     );
   }
