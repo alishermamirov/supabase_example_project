@@ -80,7 +80,7 @@ class _NotesScreenState extends State<NotesScreen> {
       ),
       floatingActionButton: FloatingActionButton(
         onPressed: () => showAddNote(context),
-        child: const Icon(Icons.add),
+        child: Text("add"),
       ),
     );
   }
